@@ -1,0 +1,129 @@
+/* Splash Page */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.seance-splash-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../img/karsten-wurth-7BjhtdogU3A-unsplash.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.seance-splash {
+  display: flex;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* .image-mask-overlay {
+    position: relative;
+    z-index: -1;
+}
+
+.image-mask-overlay:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-color: rgba(15, 0, 0, 0.2);
+} */
+
+.seance-content {
+  max-width: 90%;
+}
+
+.seance-img {
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: hidden;
+  transition: all 1s ease-out;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.seance-img:hover {
+  max-width: 100%;
+  padding: -60px;
+  position: relative;
+  filter: drop-shadow(0 10mm 5mm rgba(175, 4, 223, 1));
+}
+
+/* Home Page */
+
+.seance-hp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.seance-bg {
+  background-image: url(../img/karsten-wurth-7BjhtdogU3A-unsplash.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+/* .image-mask-overlay {
+    position: relative;
+    z-index: -1;
+}
+
+.image-mask-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-color: rgba(15, 0, 0, 0.2);
+} */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  margin: 0 30px;
+}
+
+.main-nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 10px;
+  font-weight: semi-bold;
+}
+
+.main-nav-item {
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.main-nav-item:last-child {
+  padding-left: 5px;
+}
+
+.test {
+  color: white;
+}
