@@ -9,24 +9,35 @@
     <title>SEANCE</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
+    <script src="pieces-master/dist/pieces.min.js"></script>
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script>
 </head>
 
 <body class="seance-bg">
-
-        <nav class="main-nav-links">
-            <p class="main-nav-item">Sign Up</p>
-            <p class="main-nav-item">Login</p>
+    <header class="seance-links-container">
+        <nav class="main-nav-logo-left">
+            <img class="seance-triangle-logo-nav" src="img/SeanceTriangleLogo.svg" alt="Seance logo">
         </nav>
+        <nav class="main-nav-links-right">
+            <a class="main-nav-item">
+                <i class="fab fa-soundcloud fa-2x"></i>
+            </a>
+            <a class="main-nav-item" href="https://www.instagram.com/sevnce_/">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+        </nav>
+    </header>
 
     <section>
         <div class="seance-hp-container">
-            <div class="test">
-                <p>test</p>
+                <canvas class="my-canvas"></canvas>
             </div>
     </section>
-
-    <script src="js/mainpage.js"></script>
-    <script type="module" src="node_modules/animejs/lib/anime.min.js"></script>
 </body>
+<script src="js/mainpage.js"></script>
+
 
 </html>
