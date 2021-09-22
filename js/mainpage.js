@@ -1,15 +1,16 @@
 var canvas = document.querySelector('.seance-canvas'), ctx = canvas.getContext("2d");
-canvas.width = canvas.getBoundingClientRect().width;
-canvas.height = canvas.getBoundingClientRect().height;
+
+var imagesEl = [].slice.call(document.querySelectorAll('.seance-image'));
     
 var seanceImage = new Image(500, 100);
 var items = [];
 var imagesReady = 0;
-seanceImage.onload = function () {
-    ctx.drawImage(seanceImage, 500, 100);
+seanceImage.onload = async function () {
+    await ctx.drawImage(seanceImage, 500, 100);
+    console.log("imageloaded")
 };
-seanceImage.src = 'img/seanceghost2.png';
-items.push({ type: 'image', value: seanceImage });
+seanceImage.currentSrc = imagesEl[0].src;
+items.push({ type: 'image', value: imagesEl[0], options:imageOptions });
 console.log(items);
 
 var imageOptions = {
@@ -37,32 +38,38 @@ console.log(seanceImage);
 
 
 
-// var piece = items;
+
+
+
+var myPieces = new Pieces(imageOptions);
+myPieces.showPieces();
+
+// myPieces.showPieces({items: imagesEl, ignore: ['tx'], singly: true, update: (anim) => {
+
+// var piece = anim.animatables[0].target;
 // var ty = piece.ty;
+// anime.remove(piece);
 // anime({
-//     targets: items,
-//     ty: function () {
-//         return [{ value: ty + 10, duration: 1000 }, { value: ty - 10, duration: 2000 }, { value: ty, duration: 1000 }]
-//     },
+//     targets: piece,
+//     ty: piece.h_ty < 300
+//         ? [{value: ty + 10, duration: 1000}, {value: ty - 10, duration: 2000}, {value: ty, duration: 1000}]
+//         : [{value: ty - 10, duration: 1000}, {value: ty + 10, duration: 2000}, {value: ty, duration: 1000}],
 //     duration: 2000,
 //     easing: 'linear',
 //     loop: true
 // });
+// }});
 
-
-var myPieces = new Pieces(imageOptions);
-
-myPieces.showPieces()
 console.log(imageOptions);
 
 anime({
     targets: '.seance-event-section',
-    translateY: 90,
+    translateY: 80,
     easing: 'easeOutQuart'
 });
 
 anime({
     targets: 'div',
-    translateY: 50,
+    translateY: 40,
     easing: 'easeOutQuart'
 });
