@@ -15,8 +15,8 @@ console.log(items);
 
 var imageOptions = {
     canvas: canvas,
-    // items: items,
-    image: seanceImage,
+    items: items,
+    // image: seanceImage,
     x: 'centerAll',
     y: 'centerAll',
     piecesSpacing: 6,
