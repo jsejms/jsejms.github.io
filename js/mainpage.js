@@ -2,9 +2,9 @@ var canvas = document.querySelector('.seance-canvas'), ctx = canvas.getContext("
 
 var imagesEl = [].slice.call(document.querySelectorAll('.seance-image'));
 
-var seanceImage = new Image(500, 100);
 var items = [];
 var imagesReady = 0;
+var seanceImage = new Image(500, 100);
 seanceImage.onload = async function () {
     await ctx.drawImage(seanceImage, 500, 100);
     console.log("imageloaded")
