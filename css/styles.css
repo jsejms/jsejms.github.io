@@ -1,7 +1,7 @@
 /* Splash Page */
 
 body {
-    height: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -28,7 +28,9 @@ p {
 p span {
   background-color: rgba(0, 0, 0, 0.6);
 }
-
+li {
+  list-style-type: none;
+}
 .seance-splash-container {
   display: flex;
   align-items: center;
@@ -62,6 +64,8 @@ p span {
   transition: all 1s ease-out;
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
 }
 
 .seance-img:hover {
@@ -73,14 +77,14 @@ p span {
 
 /* Home Page */
 
-.seance-hp-container {
+/* .seance-hp-container {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
+} */
 
-.seance-bg {
+/* .seance-bg {
   background-image: url(../img/karsten-wurth-7BjhtdogU3A-unsplash.jpg);
   background-position: center center;
   background-attachment: fixed;
@@ -88,6 +92,98 @@ p span {
   background-size: cover;
   height: 100vh;
   width: 100%;
+} */
+
+.seance-scale-bg,
+.seance-scale-bg:after {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  isolation: isolate;
+}
+
+.seance-scale-bg::after {
+  content: "";
+  background: transparent url("../img/Group 94.png") repeat top left;
+}
+
+.seance-scale-bg li span {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 1;
+  transform: scale(9) rotate(3.6deg);
+  z-index: -2;
+  isolation: isolate;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+
+}
+
+
+.seance-scale-bg li div {
+  z-index: 1000;
+  position: absolute;
+  clip-path: ellipse(50px 60px at 0 10% 20%);
+  bottom: 30px;
+  left: 0px;
+  text-align: center;
+  opacity: 0;
+  color: #ffff;
+}
+
+.seance-scale-bg li div h3 {
+  line-height: 200px;
+  padding: 0;
+  font-size: 240px;
+  clip-path: ellipse(50px 60px at 0 10% 20%);
+  transform: scale(2.4) rotate(90deg);
+}
+
+.seance-scale-bg li div {
+  z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: .1;
+  filter: invert(2);
+  color: #fff;
+  transform: scale(4) rotate(90deg);
+}
+
+#seance-video {
+    filter: blur(3px);
+    opacity: .4;
+}
+
+.seance-scale-bg li:nth-child(1) span {
+  background-image: url(../img/sasha-matic-hg-AQfzQr20-unsplash.jpg);
+}
+
+
+
+@media screen and (max-width: 1140px) {
+  .seance-scale-bg li div h3 {
+    font-size: 140px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .seance-scale-bg li div h3 {
+    font-size: 80px;
+  }
 }
 
 /* Nav */
