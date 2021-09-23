@@ -9,7 +9,7 @@ seanceImage.onload = async function () {
     await ctx.drawImage(seanceImage, 500, 100);
     console.log("imageloaded")
 };
-seanceImage.currentSrc = imagesEl[0].src;
+seanceImage.src = imagesEl[0].src;
 items.push({ type: 'image', value: imagesEl[0], options: imageOptions });
 console.log(items);
 
