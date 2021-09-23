@@ -1,7 +1,7 @@
 var canvas = document.querySelector('.seance-canvas'), ctx = canvas.getContext("2d");
 
 var imagesEl = [].slice.call(document.querySelectorAll('.seance-image'));
-    
+
 var seanceImage = new Image(500, 100);
 var items = [];
 var imagesReady = 0;
@@ -10,13 +10,13 @@ seanceImage.onload = async function () {
     console.log("imageloaded")
 };
 seanceImage.currentSrc = imagesEl[0].src;
-items.push({ type: 'image', value: imagesEl[0], options:imageOptions });
+items.push({ type: 'image', value: imagesEl[0], options: imageOptions });
 console.log(items);
 
 var imageOptions = {
     canvas: canvas,
-    items: items,
-    // image: seanceImage,
+    // items: items,
+    image: seanceImage,
     x: 'centerAll',
     y: 'centerAll',
     piecesSpacing: 6,
@@ -34,12 +34,6 @@ var imageOptions = {
         easing: 'easeOutQuint'
     },
 };
-console.log(seanceImage);
-
-
-
-
-
 
 var myPieces = new Pieces(imageOptions);
 myPieces.showPieces();
@@ -60,7 +54,6 @@ myPieces.showPieces();
 // });
 // }});
 
-console.log(imageOptions);
 
 anime({
     targets: '.seance-event-section',
