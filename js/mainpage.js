@@ -32,7 +32,7 @@ var imageOptions = {
     },
 };
 
-var myPieces = new Pieces(imageOptions) ;
+var myPieces = new Pieces(imageOptions);
 myPieces.showPieces();
 
 anime({
@@ -46,3 +46,22 @@ anime({
     translateY: 40,
     easing: 'easeOutQuart'
 });
+
+
+const hamburgerOpen = document.getElementById("hamburger-menu");
+
+hamburgerOpen.addEventListener("click", displaySideMenu);
+
+const hamburgerClose = document.getElementById("menu-close");
+
+hamburgerClose.addEventListener("click", hideSideMenu);
+
+const sideMenu = document.getElementById("side-menu");
+
+function displaySideMenu() {
+    sideMenu.classList.add("show-menu");
+}
+
+function hideSideMenu() {
+    sideMenu.classList.remove("show-menu");
+}
